@@ -47,7 +47,6 @@ class ProductView extends Component {
     }
     //for fetching image API on date selected product render
     fetchupdateimage(d) {
-        console.log("before1", d);
         var t = 'https://api.producthunt.com/v1/posts?day=' + d + '&access_token=ec6K_AQNMuru2NyK819R1M3DEsLwKUGR4S87Wphusp0'
         fetch('https://api.producthunt.com/v1/posts?day=' + d + '&access_token=ec6K_AQNMuru2NyK819R1M3DEsLwKUGR4S87Wphusp0')
             .then(response => response.json())
@@ -60,11 +59,9 @@ class ProductView extends Component {
                 })
 
             )
-        console.log("before2", t);
     }
     //checking to visble calender or not
     sendback = () => {
-        console.log("state", this.state.visible)
         if (!this.state.visible)
             this.setState({
                 visible: true,
@@ -91,7 +88,6 @@ class ProductView extends Component {
                 day = '0' + day;
 
             let d = [year, month, day].join('-');
-            console.log("date", d);
             //called function and pass parameter of formatted date-->
             
             this.fetchupdateimage(d);
@@ -102,14 +98,12 @@ class ProductView extends Component {
         this.setState({
             noimage: true
         })
-        console.log("immediate",d);
         //store in variable array for further rendering in liked product-->
         let Likedproduct = d.makers[0] ?
             d.makers[0].image_url['original'] :
             "https://ph-avatars.imgix.net/566629/original?auto=format&fit=crop&crop=faces&w=original&h=original)";
         //pushing into array-->
         this.state.LikedProduct.push(Likedproduct);
-        console.log("afterpush", this.state.LikedProduct);
         //checking for current statu sof button-->
         if (this.state.active === position) {
             this.setState({ active: null })
@@ -127,9 +121,6 @@ class ProductView extends Component {
    
     //rendering part start-->
     render() {
-        // console.log("current date",this.state.date.toISOString().slice(0,10)<);
-        console.log('image', this.state.image);
-        console.log("particularimage", this.state.particualrDateimage);
         return (
 
             <React.Fragment>
