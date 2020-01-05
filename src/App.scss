@@ -211,7 +211,7 @@ font-weight: 700;
     }
   }
   .date-detector{
-    height: 42% ;
+    height: 37% ;
     padding:0px;
   .react-calendar{
     margin-left: 9%;
@@ -234,13 +234,28 @@ height: 5%;
 
 @media screen and (max-width: 375px){
   .date-detector .react-calendar{
-  margin-left: 3% !important;
+  margin-left: 3%;
 }
 }
 
-@media screen and (max-width: 768px){
+// @media screen and (max-width: 765px){
+//   .date-detector .react-calendar{
+//   margin-left: 3% !important;
+// }
+//}
+@media screen and (min-width:410px) and (max-width: 552px){
   .date-detector .react-calendar{
-  margin-left: 3% !important;
+  margin-left: 7% ;
+}
+}
+@media screen and (min-width:552px) and (max-width: 800px){
+  .date-detector .react-calendar{
+  margin-left: 26% ;
+}
+}
+@media screen and (min-width: 768px) and (max-width:924px){
+  .date-detector .react-calendar{
+  margin-left: 26% !important;
 }
 }
 //Responsie design End-->
