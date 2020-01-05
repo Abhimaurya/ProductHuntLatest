@@ -121,6 +121,7 @@ class ProductView extends Component {
    
     //rendering part start-->
     render() {
+       
         return (
 
             <React.Fragment>
